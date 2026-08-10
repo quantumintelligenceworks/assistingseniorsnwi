@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quantumintelligenceworks.github.io/assistingseniorsnwi/sitemap.xml

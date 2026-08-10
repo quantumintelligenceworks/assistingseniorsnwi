@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Hardening. The site has no forms, no cookies, no analytics, and no executable
+     JavaScript; this policy locks that in so nothing can be injected later. Google
+     Fonts is the only third party allowed. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+
+<title>Assisting Seniors, Inc. | Non-Medical Home Care in Valparaiso, Indiana</title>
+<meta name="description" content="Assisting Seniors, Inc. provides non-medical home care — personal care, companionship, and household help — so Seniors can stay safely at home in Valparaiso, Chesterton, Crown Point, Portage, and Northwest Indiana. Call Kelly Staubus at (219) 265-1581." />
+<link rel="canonical" href="https://quantumintelligenceworks.github.io/assistingseniorsnwi/" />
+<meta name="theme-color" content="#F0E8DC" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Assisting Seniors, Inc." />
+<meta property="og:title" content="Assisting Seniors, Inc. | Compassionate care. Peace of mind." />
+<meta property="og:description" content="Non-medical home care in Northwest Indiana. Personal care, companionship, and household help so Seniors can live safely and comfortably at home." />
+<meta property="og:url" content="https://quantumintelligenceworks.github.io/assistingseniorsnwi/" />
+<meta property="og:image" content="https://quantumintelligenceworks.github.io/assistingseniorsnwi/assets/asi-logo.png" />
+<meta property="og:image:alt" content="Assisting Seniors, Inc." />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Assisting Seniors, Inc. | Compassionate care. Peace of mind." />
+<meta name="twitter:description" content="Non-medical home care in Northwest Indiana. Call Kelly Staubus at (219) 265-1581." />
+<meta name="twitter:image" content="https://quantumintelligenceworks.github.io/assistingseniorsnwi/assets/asi-logo.png" />
+
+<link rel="icon" href="assets/asi-logo.png" />
+<link rel="apple-touch-icon" href="assets/asi-logo.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   Assisting Seniors, Inc. — brand tokens
+   Palette and type locked to the business card identity.
+   ============================================================ */
+:root{
+  --cream:      #F0E8DC;
+  --plum:       #5C4B7A;
+  --plum-deep:  #3D2F56;
+  --lavender:   #8B7AA8;
+  --blush:      #D9C6C9;
+  --white:      #FDFAF7;
+
+  --display: "Cormorant Garamond", Georgia, serif;
+  --script:  "Great Vibes", "Cormorant Garamond", cursive;
+  --body:    "Lora", Georgia, serif;
+
+  --measure: 34rem;
+  --wrap: 74rem;
+  --rail: 3.75rem;
+
+  --pad-y: clamp(4.5rem, 9vw, 8.5rem);
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+/* scroll-padding clears the sticky masthead, which is taller while the
+   nav sits on its own row below ~66rem */
+html{ scroll-behavior:smooth; scroll-padding-top:9rem; }
+@media (min-width:66rem){ html{ scroll-padding-top:6.5rem; } }
+
+body{
+  margin:0;
+  background-color:var(--cream);
+  /* barely-there paper tooth */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  color:var(--plum);
+  font-family:var(--body);
+  font-size:19px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+img{ max-width:100%; height:auto; display:block; }
+
+a{ color:var(--plum-deep); text-underline-offset:0.22em; text-decoration-thickness:1px; }
+a:hover{ color:var(--plum); }
+
+:focus-visible{
+  outline:3px solid var(--plum-deep);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+.wrap{ width:100%; max-width:var(--wrap); margin-inline:auto; padding-inline:var(--gutter); }
+
+.skip{
+  position:absolute; left:0.75rem; top:-4rem; z-index:200;
+  background:var(--plum-deep); color:var(--white);
+  padding:0.7rem 1.1rem; border-radius:0 0 6px 6px;
+  font-family:var(--body); font-size:17px; text-decoration:none;
+  transition:top 220ms ease-out;
+}
+.skip:focus{ top:0; color:var(--white); }
+
+/* ---------- Type scale ---------- */
+h1,h2,h3{
+  font-family:var(--display);
+  font-weight:500;
+  line-height:1.08;
+  letter-spacing:0.005em;
+  color:var(--plum-deep);
+  margin:0 0 0.55em;
+  text-wrap:balance;
+}
+h1{ font-size:clamp(2.9rem, 8.5vw, 5.4rem); font-weight:300; }
+h2{ font-size:clamp(2.1rem, 5vw, 3.35rem); font-weight:300; }
+h3{ font-size:clamp(1.35rem, 2.4vw, 1.6rem); font-weight:600; letter-spacing:0.01em; }
+p{ margin:0 0 1.15em; }
+p:last-child{ margin-bottom:0; }
+
+em.soft{ font-style:italic; color:var(--lavender); }
+
+.lede{
+  font-size:clamp(1.15rem, 2.2vw, 1.4rem);
+  line-height:1.6;
+  max-width:var(--measure);
+}
+
+/* Section eyebrow — printed-brochure numbering */
+.sec-num{
+  display:flex; align-items:center; gap:0.9rem;
+  font-family:var(--body);
+  font-size:0.8rem; letter-spacing:0.24em; text-transform:uppercase;
+  color:var(--plum);
+  margin:0 0 1.6rem;
+}
+.sec-num b{
+  font-family:var(--display); font-weight:600; font-size:1.05rem;
+  letter-spacing:0.06em; color:var(--lavender);
+}
+.sec-num::after{
+  content:""; flex:1 1 auto; height:1px; background:var(--blush); max-width:9rem;
+}
+
+/* ---------- Masthead ---------- */
+.masthead{
+  position:sticky; top:0; z-index:100;
+  /* opaque so the logo's multiply blend always lands on cream, never on
+     whatever section happens to be scrolling underneath */
+  background:var(--cream);
+  border-bottom:1px solid var(--blush);
+}
+.masthead__inner{
+  display:flex; align-items:center; flex-wrap:wrap;
+  gap:0.75rem 1.5rem; padding-block:0.7rem;
+}
+.brand{ display:block; flex:0 0 auto; margin-right:auto; order:1; }
+/* The logo ships on an opaque white plate; multiply drops it onto the cream. */
+.brand img,
+.foot img{ mix-blend-mode:multiply; }
+.brand img{ height:clamp(34px, 6vw, 52px); width:auto; }
+.masthead__call{ order:2; }
+
+.nav{
+  order:3; flex:1 0 100%;
+  overflow-x:auto; overscroll-behavior-x:contain;
+  scrollbar-width:none;
+  border-top:1px solid var(--blush);
+  padding-top:0.55rem;
+  -webkit-overflow-scrolling:touch;
+  /* fade the right edge so the strip reads as continuing */
+  -webkit-mask-image:linear-gradient(to right, #000 88%, transparent 100%);
+          mask-image:linear-gradient(to right, #000 88%, transparent 100%);
+}
+.nav::-webkit-scrollbar{ display:none; }
+@media (min-width:66rem){
+  .nav{
+    order:2; flex:0 1 auto; margin-inline:auto;
+    overflow:visible; border-top:0; padding-top:0;
+    -webkit-mask-image:none; mask-image:none;
+  }
+  .masthead__call{ order:3; }
+}
+.nav ul{
+  display:flex; flex-wrap:nowrap; white-space:nowrap;
+  gap:clamp(1.05rem, 1.6vw, 1.9rem);
+  list-style:none; margin:0; padding:0 0 0.2rem;
+}
+.nav a{
+  font-family:var(--display);
+  font-size:1.12rem; font-weight:500; letter-spacing:0.04em;
+  color:var(--plum-deep); text-decoration:none;
+  padding-block:0.55rem;
+  border-bottom:1px solid transparent;
+  transition:border-color 220ms ease-out, color 220ms ease-out;
+}
+.nav a:hover{ border-bottom-color:var(--lavender); }
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:0.55rem;
+  min-height:3.1rem; padding:0.75rem 1.6rem;
+  font-family:var(--body); font-size:1.05rem; font-weight:500; letter-spacing:0.02em;
+  text-decoration:none; border-radius:2px; border:1px solid var(--plum-deep);
+  transition:background-color 240ms ease-out, color 240ms ease-out, border-color 240ms ease-out;
+}
+.btn--solid{ background:var(--plum-deep); color:var(--white); }
+.btn--solid:hover{ background:var(--plum); border-color:var(--plum); color:var(--white); }
+.btn--ghost{ background:transparent; color:var(--plum-deep); }
+.btn--ghost:hover{ background:var(--white); color:var(--plum-deep); }
+.btn--light{ background:var(--white); color:var(--plum-deep); border-color:var(--white); }
+.btn--light:hover{ background:var(--blush); border-color:var(--blush); color:var(--plum-deep); }
+.btn--outline-light{ background:transparent; color:var(--white); border-color:var(--blush); }
+.btn--outline-light:hover{ background:rgba(253,250,247,0.12); color:var(--white); }
+.btn svg{ flex:0 0 auto; }
+
+.masthead .btn{ min-height:2.7rem; padding:0.45rem 1.15rem; font-size:1rem; }
+.masthead .btn .lbl-full{ display:none; }
+@media (min-width:34rem){
+  .masthead .btn .lbl-short{ display:none; }
+  .masthead .btn .lbl-full{ display:inline; }
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  padding-block:clamp(3.5rem, 8vw, 6.5rem) clamp(3.5rem, 7vw, 6rem);
+  overflow:hidden;
+}
+.hero__grid{
+  display:grid; gap:clamp(2rem, 5vw, 4rem);
+  grid-template-columns:1fr;
+  align-items:center;
+}
+@media (min-width:56rem){
+  .hero__grid{ grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr); }
+}
+.eyebrow{
+  font-size:0.82rem; letter-spacing:0.22em; text-transform:uppercase;
+  color:var(--plum); margin:0 0 1.5rem;
+}
+.hero h1{ margin-bottom:0.35em; }
+.hero__actions{
+  display:flex; flex-wrap:wrap; gap:0.85rem; margin-top:2rem;
+}
+.hero__sig{
+  margin-top:2.4rem; padding-top:1.4rem;
+  border-top:1px solid var(--blush);
+  font-family:var(--script);
+  font-size:clamp(1.6rem, 3.4vw, 2.1rem);
+  line-height:1.3; color:var(--lavender);
+}
+.hero__art{ justify-self:center; width:min(58%, 15rem); }
+@media (min-width:56rem){ .hero__art{ width:min(100%, 23rem); } }
+
+/* ---------- Brush divider (echo of the logo swash) ---------- */
+.swash{ display:block; width:min(100%, 24rem); height:auto; margin:0 auto; color:var(--blush); }
+
+/* ---------- Quote band ---------- */
+.quote{
+  background:var(--white);
+  border-block:1px solid var(--blush);
+  padding-block:clamp(3rem, 6vw, 5rem);
+  text-align:center;
+}
+.quote blockquote{
+  margin:0 auto; max-width:44rem;
+  font-family:var(--display); font-weight:300; font-style:italic;
+  font-size:clamp(1.6rem, 4vw, 2.6rem); line-height:1.3;
+  color:var(--plum-deep);
+}
+.quote cite{
+  display:block; margin-top:1.5rem;
+  font-family:var(--body); font-style:normal;
+  font-size:0.95rem; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--plum);
+}
+
+/* ---------- Sections ---------- */
+section{ scroll-margin-top:9rem; }
+@media (min-width:66rem){ section{ scroll-margin-top:6.5rem; } }
+.band{ padding-block:var(--pad-y); }
+.band--white{ background:var(--white); border-block:1px solid var(--blush); }
+
+.split{
+  display:grid; gap:clamp(1.75rem, 5vw, 4rem);
+  grid-template-columns:1fr;
+}
+@media (min-width:56rem){
+  .split{ grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr); align-items:start; }
+  .split--even{ grid-template-columns:1fr 1fr; }
+}
+.split .prose{ max-width:38rem; }
+
+/* ---------- Care cards ---------- */
+.cards{
+  display:grid; gap:clamp(1.25rem, 3vw, 2rem);
+  grid-template-columns:1fr;
+  margin-top:clamp(2rem, 4vw, 3rem);
+}
+@media (min-width:44rem){ .cards{ grid-template-columns:repeat(2, 1fr); } }
+@media (min-width:70rem){ .cards{ grid-template-columns:repeat(3, 1fr); } }
+
+.card{
+  background:var(--white);
+  border:1px solid var(--blush);
+  border-top:3px solid var(--lavender);
+  border-radius:2px;
+  padding:clamp(1.6rem, 3vw, 2.25rem);
+  display:flex; flex-direction:column; gap:0.4rem;
+}
+.band--white .card{ background:var(--cream); }
+.card h3{ margin-bottom:0.4em; }
+.card__list{
+  list-style:none; margin:0; padding:0;
+  font-size:1.02rem; line-height:1.7;
+}
+.card__list li{
+  position:relative; padding-left:1.35rem; margin-bottom:0.45rem;
+}
+.card__list li::before{
+  content:""; position:absolute; left:0; top:0.72em;
+  width:0.42rem; height:0.42rem; border-radius:50%;
+  background:var(--lavender);
+}
+
+/* ---------- Scope note ---------- */
+.note{
+  margin-top:clamp(2rem, 4vw, 3rem);
+  border-left:3px solid var(--lavender);
+  background:var(--white);
+  padding:clamp(1.4rem, 3vw, 2rem) clamp(1.4rem, 3vw, 2.25rem);
+  border-radius:0 2px 2px 0;
+  max-width:52rem;
+}
+.band--white .note{ background:var(--cream); }
+.note h3{ font-size:1.25rem; margin-bottom:0.5em; }
+.note p{ font-size:1.02rem; }
+
+/* ---------- Areas ---------- */
+.towns{
+  list-style:none; margin:2rem 0 0; padding:0;
+  display:flex; flex-wrap:wrap; gap:0.7rem;
+}
+.towns li{
+  border:1px solid var(--blush);
+  background:var(--white);
+  border-radius:999px;
+  padding:0.5rem 1.25rem;
+  font-size:1.02rem;
+  color:var(--plum-deep);
+}
+.band--white .towns li{ background:var(--cream); }
+
+/* ---------- About ---------- */
+.facts{
+  list-style:none; margin:2rem 0 0; padding:0;
+  display:grid; gap:1.35rem;
+}
+@media (min-width:44rem){ .facts{ grid-template-columns:1fr 1fr; } }
+.facts li{ border-top:1px solid var(--blush); padding-top:1rem; }
+.facts b{
+  display:block;
+  font-family:var(--display); font-size:1.9rem; font-weight:500; line-height:1.1;
+  color:var(--lavender);
+}
+.facts span{ font-size:1rem; line-height:1.55; display:block; margin-top:0.3rem; }
+
+.kelly-card{
+  background:var(--white);
+  border:1px solid var(--blush);
+  border-radius:2px;
+  padding:clamp(1.75rem, 3.5vw, 2.5rem);
+  text-align:center;
+}
+.band--white .kelly-card{ background:var(--cream); }
+.kelly-card .mark{ width:6.5rem; margin:0 auto 1.25rem; color:var(--lavender); }
+.kelly-card .name{
+  font-family:var(--script); font-size:clamp(2.2rem, 5vw, 2.9rem);
+  line-height:1.1; color:var(--plum-deep); margin:0 0 0.35rem;
+}
+.kelly-card .role{
+  font-size:0.82rem; letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--plum); margin:0 0 1.5rem;
+}
+.kelly-card .quote-sm{
+  font-family:var(--display); font-style:italic; font-weight:300;
+  font-size:1.3rem; line-height:1.45; color:var(--plum-deep);
+  border-top:1px solid var(--blush); padding-top:1.4rem; margin:0;
+}
+
+/* ---------- FAQ ---------- */
+.faq{ max-width:52rem; margin-top:clamp(1.5rem, 3vw, 2.5rem); }
+.faq details{
+  border-bottom:1px solid var(--blush);
+}
+.faq details:first-of-type{ border-top:1px solid var(--blush); }
+.faq summary{
+  cursor:pointer; list-style:none;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:1.25rem;
+  padding:1.35rem 0;
+  font-family:var(--display); font-size:clamp(1.3rem,2.6vw,1.55rem); font-weight:500;
+  color:var(--plum-deep);
+  line-height:1.3;
+}
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{
+  content:"+";
+  flex:0 0 auto;
+  font-family:var(--display); font-size:1.7rem; line-height:1; color:var(--lavender);
+  transform:translateY(0.1em);
+  transition:transform 240ms ease-out;
+}
+.faq details[open] summary::after{ content:"\2013"; }
+.faq summary:hover{ color:var(--plum); }
+.faq .answer{ padding:0 0 1.6rem; max-width:46rem; font-size:1.05rem; }
+
+/* ---------- Contact ---------- */
+.contact{
+  background:var(--plum-deep);
+  color:var(--white);
+  padding-block:var(--pad-y);
+}
+.contact h2, .contact h3{ color:var(--white); }
+.contact .sec-num{ color:var(--blush); }
+.contact .sec-num b{ color:var(--blush); }
+.contact .sec-num::after{ background:rgba(217,198,201,0.4); }
+.contact a{ color:var(--white); }
+/* the light button keeps its dark ink — beats the blanket .contact a rule */
+.contact a.btn--light{ color:var(--plum-deep); }
+.contact a.btn--light:hover{ color:var(--plum-deep); }
+
+.contact__grid{
+  display:grid; gap:clamp(2.25rem, 5vw, 4rem);
+  grid-template-columns:1fr;
+}
+@media (min-width:56rem){ .contact__grid{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); } }
+
+.tel{
+  display:inline-block;
+  font-family:var(--display); font-weight:300;
+  font-size:clamp(2.6rem, 7vw, 4rem); line-height:1.05;
+  color:var(--white); text-decoration:none;
+  border-bottom:1px solid rgba(217,198,201,0.5);
+  padding-bottom:0.1em;
+  transition:border-color 240ms ease-out;
+}
+.tel:hover{ border-bottom-color:var(--white); }
+.mailto{
+  display:inline-block; margin-top:1.25rem; padding-block:0.3rem;
+  font-size:1.15rem; color:var(--white);
+  word-break:break-word;
+}
+.contact__actions{ display:flex; flex-wrap:wrap; gap:0.85rem; margin-top:2.25rem; }
+
+.expect{
+  list-style:none; margin:0; padding:0;
+  counter-reset:step;
+}
+.expect li{
+  counter-increment:step;
+  position:relative;
+  padding:0 0 1.4rem 3.25rem;
+  border-bottom:1px solid rgba(217,198,201,0.25);
+  margin-bottom:1.4rem;
+  font-size:1.05rem;
+}
+.expect li:last-child{ border-bottom:0; margin-bottom:0; padding-bottom:0; }
+.expect li::before{
+  content:counter(step,decimal-leading-zero);
+  position:absolute; left:0; top:0.05em;
+  font-family:var(--display); font-size:1.35rem; color:var(--blush);
+  letter-spacing:0.04em;
+}
+.expect b{ display:block; font-family:var(--display); font-size:1.35rem; font-weight:500; margin-bottom:0.2rem; }
+
+/* ---------- Footer ---------- */
+.foot{
+  background:var(--cream);
+  border-top:1px solid var(--blush);
+  /* extra bottom room so the sticky mobile call bar never covers the fine print */
+  padding-block:clamp(3rem, 6vw, 4.5rem) 6rem;
+  font-size:1rem;
+}
+@media (min-width:52rem){ .foot{ padding-bottom:clamp(3rem, 6vw, 4.5rem); } }
+.foot__grid{
+  display:grid; gap:2rem;
+  grid-template-columns:1fr;
+  align-items:start;
+}
+@media (min-width:52rem){ .foot__grid{ grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr); } }
+.foot img{ height:52px; width:auto; margin-bottom:1.1rem; }
+.foot h2{ font-size:0.82rem; font-family:var(--body); font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--plum); margin-bottom:1rem; }
+.foot ul{ list-style:none; margin:0; padding:0; }
+.foot li{ margin-bottom:0.4rem; }
+/* keep footer links comfortably tappable rather than hairline-thin */
+.foot a{ display:inline-block; padding-block:0.32rem; }
+.foot__legal{
+  margin-top:clamp(2.5rem, 5vw, 3.5rem);
+  padding-top:1.5rem;
+  border-top:1px solid var(--blush);
+  font-size:0.95rem;
+  display:flex; flex-wrap:wrap; gap:0.5rem 1.5rem; justify-content:space-between;
+}
+
+/* ---------- Persistent call affordances ---------- */
+/* Desktop: a slim vertical rail pinned to the right edge. */
+.rail{ display:none; }
+@media (min-width:82rem){
+  .rail{
+    display:flex; align-items:center; justify-content:center;
+    position:fixed; top:0; right:0; bottom:0; width:var(--rail);
+    z-index:90;
+    background:var(--plum-deep);
+    color:var(--white); text-decoration:none;
+    border-left:1px solid var(--plum);
+  }
+  .rail span{
+    writing-mode:vertical-rl;
+    font-family:var(--display); font-size:1.35rem; letter-spacing:0.22em;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+  .rail:hover{ background:var(--plum); color:var(--white); }
+  body{ padding-right:var(--rail); }
+  .masthead{ right:var(--rail); }
+}
+
+/* Mobile: a sticky call bar so the phone number is never more than a thumb away. */
+.callbar{
+  position:fixed; left:0; right:0; bottom:0; z-index:95;
+  display:flex;
+  background:var(--plum-deep);
+  border-top:1px solid var(--plum);
+}
+@media (min-width:52rem){ .callbar{ display:none; } }
+.callbar a{
+  flex:1 1 50%;
+  display:flex; align-items:center; justify-content:center; gap:0.5rem;
+  min-height:3.5rem; padding:0.6rem 0.5rem;
+  color:var(--white); text-decoration:none;
+  font-size:1.02rem; letter-spacing:0.04em;
+}
+.callbar a + a{ border-left:1px solid rgba(217,198,201,0.35); }
+
+/* ---------- Motion + print ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{
+    animation-duration:0.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important; scroll-behavior:auto !important;
+  }
+}
+
+@media print{
+  .masthead,.rail,.callbar,.hero__art,.swash,.hero__actions,.contact__actions{ display:none !important; }
+  body{ background:#fff; color:#000; font-size:12pt; padding-right:0; }
+  .contact{ background:#fff; color:#000; }
+  .contact h2,.contact h3,.contact a,.tel,.mailto{ color:#000 !important; }
+  a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:0.85em; }
+}
+</style>
+</head>
+
+<body id="top">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="brand" href="#top" aria-label="Assisting Seniors, Inc. — home">
+      <img src="assets/asi-logo.png" alt="Assisting Seniors, Inc." width="1400" height="314" />
+    </a>
+
+    <a class="btn btn--solid masthead__call" href="tel:+12192651581">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+      <span class="lbl-full">(219)&nbsp;265-1581</span>
+      <span class="lbl-short">Call</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul>
+        <li><a href="#help">We Can Help</a></li>
+        <li><a href="#care">How We Help</a></li>
+        <li><a href="#approach">Our Approach</a></li>
+        <li><a href="#kelly">Kelly</a></li>
+        <li><a href="#areas">Areas</a></li>
+        <li><a href="#questions">Questions</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================= HERO ============================= -->
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="eyebrow">Non-medical home care &middot; Valparaiso, Indiana</p>
+        <h1>Compassionate care.<br /><em class="soft">Peace of mind.</em></h1>
+        <p class="lede">We provide affordable, reliable care options so Seniors can live safely and comfortably at home.</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="tel:+12192651581">Call Kelly &mdash; (219)&nbsp;265-1581</a>
+          <a class="btn btn--ghost" href="#contact">Ask a question</a>
+        </div>
+        <p class="hero__sig">Proudly serving Seniors &amp; families</p>
+      </div>
+
+      <div class="hero__art">
+        <!-- Iris mark, drawn to echo the watercolor flower in the logo -->
+        <svg viewBox="0 0 200 210" role="img" aria-label="Illustration of an iris flower with a heart at its center" width="200" height="210">
+          <defs>
+            <linearGradient id="petal" x1="0.15" y1="1" x2="0.85" y2="0">
+              <stop offset="0%" stop-color="#D9C6C9" stop-opacity="0.55"/>
+              <stop offset="55%" stop-color="#8B7AA8" stop-opacity="0.62"/>
+              <stop offset="100%" stop-color="#8B7AA8" stop-opacity="0.32"/>
+            </linearGradient>
+            <linearGradient id="fall" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8B7AA8" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#D9C6C9" stop-opacity="0.08"/>
+            </linearGradient>
+            <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="11"/>
+            </filter>
+          </defs>
+
+          <g transform="translate(100 100)">
+            <!-- watercolor bloom behind the petals -->
+            <ellipse cx="2" cy="-34" rx="66" ry="54" fill="#8B7AA8" opacity="0.16" filter="url(#soft)"/>
+
+            <!-- standards, fanned upward with uneven weight so it reads hand-painted -->
+            <g fill="url(#petal)">
+              <path d="M0 0 C-21 -14 -27 -49 0 -80 C27 -49 21 -14 0 0 Z" transform="rotate(-67) scale(0.94)" opacity="0.8"/>
+              <path d="M0 0 C-21 -14 -27 -52 0 -86 C27 -52 21 -14 0 0 Z" transform="rotate(-34)" opacity="0.62"/>
+              <path d="M0 0 C-22 -15 -28 -56 0 -92 C28 -56 22 -15 0 0 Z" transform="rotate(-2) scale(1.03)" opacity="0.95"/>
+              <path d="M0 0 C-21 -14 -27 -52 0 -86 C27 -52 21 -14 0 0 Z" transform="rotate(31) scale(0.98)" opacity="0.72"/>
+              <path d="M0 0 C-21 -14 -27 -49 0 -80 C27 -49 21 -14 0 0 Z" transform="rotate(64) scale(0.9)" opacity="0.85"/>
+            </g>
+
+            <!-- the long fall, giving the mark its upright stance -->
+            <path d="M-1 -8 C-12 20 -11 62 0 100 C11 62 12 20 1 -8 Z" fill="url(#fall)"/>
+
+            <!-- heart at the center, brushed in deeper plum -->
+            <g transform="translate(-1 -8) scale(0.62)">
+              <path d="M0 20 C-13 9 -24 0 -24 -11 C-24 -20 -16 -25 -9 -22 C-4 -20 -1 -16 0 -13 C1 -16 4 -20 9 -22 C16 -25 24 -20 24 -11 C24 0 13 9 0 20 Z"
+                    fill="none" stroke="#5C4B7A" stroke-width="8.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= QUOTE ============================= -->
+  <aside class="quote" aria-label="Guiding quotation">
+    <div class="wrap">
+      <blockquote>&ldquo;One person caring about another represents life&rsquo;s greatest value.&rdquo;</blockquote>
+      <cite>Jim Rohn</cite>
+    </div>
+  </aside>
+
+  <!-- ============================= WE CAN HELP ============================= -->
+  <section id="help" class="band">
+    <div class="wrap split">
+      <div>
+        <p class="sec-num"><b>01</b> We can help</p>
+        <h2>Home is where people<br /><em class="soft">do best.</em></h2>
+      </div>
+      <div class="prose">
+        <p>Senior citizens thrive by staying involved in their own lives, and one of the best ways to ensure that is by enabling them to live in their homes for as long as is safely possible. But Seniors and their families shouldn&rsquo;t have to handle the difficult challenges they face alone.</p>
+        <p>Assisting Seniors can help with illness or injury recovery, chronic medical conditions, changing life circumstances, and the building stresses of aging &mdash; brightening daily life through healthy cognitive, physical, and social interaction that lets Seniors hold on to their familiar routines and unique lifestyle.</p>
+
+        <svg class="swash" viewBox="0 0 320 22" aria-hidden="true" style="margin:2.5rem 0 0 0;">
+          <path d="M4 15 C 70 3, 150 3, 214 9 C 258 13, 288 15, 316 11"
+                fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" opacity="0.85"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= HOW WE HELP ============================= -->
+  <section id="care" class="band band--white">
+    <div class="wrap">
+      <p class="sec-num"><b>02</b> How we help</p>
+      <h2>Three kinds of help,<br /><em class="soft">shaped to one person.</em></h2>
+      <p class="lede">Most families start with a few hours a week. Care grows, shifts, or scales back as life does.</p>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Personal Care</h3>
+          <ul class="card__list">
+            <li>Bathing, dressing, grooming and hygiene</li>
+            <li>Toileting and incontinence care</li>
+            <li>Eating and hydration</li>
+            <li>Safety supervision</li>
+            <li>Transferring and positioning</li>
+            <li>Gentle exercise for strength, balance, and walking</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Companionship</h3>
+          <ul class="card__list">
+            <li>Daily routines and reminders</li>
+            <li>Medication reminders</li>
+            <li>Meal planning and preparation</li>
+            <li>Appointments and transportation</li>
+            <li>Outings and wellness activities</li>
+            <li>Conversation, reading, and games</li>
+            <li>Respite for family caregivers</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Household Help</h3>
+          <ul class="card__list">
+            <li>Dishes, dusting, vacuuming, and trash</li>
+            <li>Laundry and linens</li>
+            <li>Sorting mail and assisting with bills</li>
+            <li>Grocery shopping and errands</li>
+            <li>Prescription pickup</li>
+            <li>Pet care and houseplant care</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="note">
+        <h3>Home care &mdash; not home health</h3>
+        <p>We provide non-medical companionship, personal care, and household help in the home. We don&rsquo;t provide skilled nursing, therapy, or medical treatment, but we work alongside home-health teams and are happy to help coordinate other resources when a need is outside our scope.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= APPROACH ============================= -->
+  <section id="approach" class="band">
+    <div class="wrap split">
+      <div>
+        <p class="sec-num"><b>03</b> Our approach</p>
+        <h2>Care designed<br /><em class="soft">around you.</em></h2>
+      </div>
+      <div class="prose">
+        <p>Every family&rsquo;s situation is unique and often in constant motion. We can help Seniors who need only minimal services as well as those with higher-level chronic conditions such as Alzheimer&rsquo;s or dementia.</p>
+        <p>When we begin designing a care plan together, we&rsquo;ll discuss your needs and expectations, then fuse your ideas with our experience into a plan everyone involved approves &mdash; one that grows and changes with your wishes, so the dignity, privacy, and comfort of all are preserved.</p>
+
+        <ul class="facts">
+          <li>
+            <b>Matched, not assigned</b>
+            <span>Kelly knows the caregivers and she knows the families. Personality, routine, and situation all factor into who walks through the door.</span>
+          </li>
+          <li>
+            <b>A guest in the home</b>
+            <span>Care should feel warm, not clinical. Familiar routines, familiar objects, and a home that stays the client&rsquo;s own.</span>
+          </li>
+          <li>
+            <b>Safety, quietly</b>
+            <span>Bathroom, kitchen, bedroom, stairs. Experienced eyes catch the risks a family living with them every day may not.</span>
+          </li>
+          <li>
+            <b>Families, kept in the loop</b>
+            <span>Regular updates by phone and text &mdash; especially valuable when adult children live out of town.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= KELLY ============================= -->
+  <section id="kelly" class="band band--white">
+    <div class="wrap split split--even">
+      <div>
+        <p class="sec-num"><b>04</b> Who you&rsquo;ll talk to</p>
+        <h2>You call the number,<br /><em class="soft">Kelly answers.</em></h2>
+        <p>There is no call center and no intake queue. When you reach out to Assisting Seniors, you reach Kelly Staubus &mdash; the owner &mdash; and she stays involved from the first conversation onward.</p>
+        <p>Kelly has been with Assisting Seniors for roughly fourteen years. She began as a caregiver, working with client after client in their own homes, moved into management, and then partnered with the previous owners to take over the company. She handles the intake meetings, the scheduling, and the matching of caregivers to clients herself, and she makes a point of being reachable outside of business hours &mdash; because that is when families usually need to talk.</p>
+        <p>Her own experience caring for loved ones is what brought her to this work in the first place.</p>
+      </div>
+
+      <div class="kelly-card">
+        <svg class="mark" viewBox="0 0 200 210" aria-hidden="true">
+          <g transform="translate(100 95)" fill="#8B7AA8" fill-opacity="0.5">
+            <path d="M0 0 C-21 -14 -27 -49 0 -80 C27 -49 21 -14 0 0 Z" transform="rotate(-64)"/>
+            <path d="M0 0 C-21 -14 -27 -52 0 -86 C27 -52 21 -14 0 0 Z" transform="rotate(-32)"/>
+            <path d="M0 0 C-22 -15 -28 -56 0 -92 C28 -56 22 -15 0 0 Z"/>
+            <path d="M0 0 C-21 -14 -27 -52 0 -86 C27 -52 21 -14 0 0 Z" transform="rotate(32)"/>
+            <path d="M0 0 C-21 -14 -27 -49 0 -80 C27 -49 21 -14 0 0 Z" transform="rotate(64)"/>
+            <path d="M0 -6 C-13 22 -12 68 0 108 C12 68 13 22 0 -6 Z" fill-opacity="0.3"/>
+          </g>
+        </svg>
+        <p class="name">Kelly Staubus</p>
+        <p class="role">President &amp; Senior Care Consultant</p>
+        <p class="quote-sm">&ldquo;Our goal is to exceed your expectations for customized care and nurturing solutions.&rdquo;</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= AREAS ============================= -->
+  <section id="areas" class="band">
+    <div class="wrap split">
+      <div>
+        <p class="sec-num"><b>05</b> Where we serve</p>
+        <h2>Northwest Indiana,<br /><em class="soft">the 219.</em></h2>
+      </div>
+      <div class="prose">
+        <p>Assisting Seniors is based in Valparaiso and serves Porter County and the surrounding Northwest Indiana communities. Most of our care happens in clients&rsquo; own homes; we also provide one-to-one support inside assisted living and nursing facilities when a family wants an extra set of hands.</p>
+        <ul class="towns">
+          <li>Valparaiso</li>
+          <li>Portage</li>
+          <li>Chesterton</li>
+          <li>Crown Point</li>
+          <li>Beverly Shores</li>
+          <li>Porter County</li>
+        </ul>
+        <p style="margin-top:1.5rem;font-size:1rem;">Nearby and not on the list? Call &mdash; we cover a wide radius around Valparaiso and will tell you honestly if we can help.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= FAQ ============================= -->
+  <section id="questions" class="band band--white">
+    <div class="wrap">
+      <p class="sec-num"><b>06</b> Questions families ask</p>
+      <h2>Straight answers,<br /><em class="soft">no pressure.</em></h2>
+
+      <div class="faq">
+        <details>
+          <summary>What is non-medical home care?</summary>
+          <div class="answer">
+            <p>Non-medical home care provides companionship, personal care assistance, meal preparation, light housekeeping, medication reminders, and transportation &mdash; support that helps Seniors live safely and comfortably at home without clinical or medical services.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How is this different from home health?</summary>
+          <div class="answer">
+            <p>Home health involves skilled nursing, therapy, or medically supervised treatment prescribed by a physician. Assisting Seniors provides non-medical care only &mdash; we do not provide injections, wound care, skilled nursing, or medication administration. We do work alongside home-health teams and can help coordinate other resources when a need falls outside our scope.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How much care do we have to commit to?</summary>
+          <div class="answer">
+            <p>As much or as little as the situation calls for. Some families need a few hours a week of companionship and errands; others need daily personal care, or around-the-clock support during a final stage of life. Care plans are built to grow and change with your wishes.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can you help while a family caregiver takes a break?</summary>
+          <div class="answer">
+            <p>Yes. Respite care is one of the most common reasons families call. Whether it is a standing afternoon each week or a few days while you travel, we can stay with your loved one so you can take care of your own life and health.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Do you provide care in assisted living or nursing facilities?</summary>
+          <div class="answer">
+            <p>Yes. When a facility is short-staffed or a family wants dedicated one-to-one attention, we provide supplemental care alongside facility staff.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What about long-term care insurance?</summary>
+          <div class="answer">
+            <p>Some of our clients have long-term care policies, and Kelly will assist with the insurance processing and paperwork. Bring your policy to the introductory call and she will walk through it with you.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can you help with a hospital or rehab discharge?</summary>
+          <div class="answer">
+            <p>Yes. We work with discharge planners, social workers, and hospital case managers to coordinate home care support when a Senior is transitioning from a hospital or rehabilitation facility back home.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do we get started?</summary>
+          <div class="answer">
+            <p>Call Kelly directly at <a href="tel:+12192651581">(219)&nbsp;265-1581</a> or email <a href="mailto:assistingseniorsnwi@gmail.com">assistingseniorsnwi@gmail.com</a>. The first conversation is a complimentary introductory call &mdash; no cost, no commitment.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= CONTACT ============================= -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <p class="sec-num"><b>07</b> Contact</p>
+      <div class="contact__grid">
+        <div>
+          <h2 style="margin-bottom:0.4em;">Contact Kelly Staubus for a complimentary introductory call.</h2>
+          <p style="max-width:32rem;">Here for your family, when you need us most. Call or email and Kelly will get back to you personally.</p>
+
+          <p style="margin:2.25rem 0 0;">
+            <a class="tel" href="tel:+12192651581">(219)&nbsp;265-1581</a>
+          </p>
+          <p style="margin:0;">
+            <a class="mailto" href="mailto:assistingseniorsnwi@gmail.com">assistingseniorsnwi@gmail.com</a>
+          </p>
+
+          <div class="contact__actions">
+            <a class="btn btn--light" href="tel:+12192651581">Call now</a>
+            <a class="btn btn--outline-light" href="mailto:assistingseniorsnwi@gmail.com?subject=Care%20question%20for%20Assisting%20Seniors">Send an email</a>
+          </div>
+
+          <p style="margin-top:2rem;font-size:0.98rem;color:var(--blush);">Serving Valparaiso, Portage, Chesterton, Crown Point, Beverly Shores, and the surrounding Northwest Indiana communities.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size:0.82rem;font-family:var(--body);font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--blush);margin-bottom:1.75rem;">What the first call looks like</h3>
+          <ul class="expect">
+            <li>
+              <b>You tell us what&rsquo;s happening</b>
+              What&rsquo;s changed, what worries you, and what your loved one wants. No forms to fill out first.
+            </li>
+            <li>
+              <b>We tell you honestly what we can do</b>
+              What non-medical home care covers, what it doesn&rsquo;t, and whether another resource would serve you better.
+            </li>
+            <li>
+              <b>We build the plan together</b>
+              Your ideas and our experience, shaped into a plan everyone involved approves &mdash; and revisited as needs change.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <img src="assets/asi-logo.png" alt="Assisting Seniors, Inc." width="1400" height="314" />
+        <p style="max-width:26rem;font-size:0.98rem;">Non-medical home care serving Northwest Indiana. Compassionate care. Peace of mind.</p>
+      </div>
+
+      <div>
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="#help">We can help</a></li>
+          <li><a href="#care">How we help</a></li>
+          <li><a href="#approach">Our approach</a></li>
+          <li><a href="#kelly">Kelly Staubus</a></li>
+          <li><a href="#areas">Where we serve</a></li>
+          <li><a href="#questions">Questions families ask</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="tel:+12192651581">(219)&nbsp;265-1581</a></li>
+          <li><a href="mailto:assistingseniorsnwi@gmail.com">assistingseniorsnwi@gmail.com</a></li>
+          <li>Valparaiso, Indiana</li>
+          <li>Valparaiso &middot; Portage &middot; Chesterton &middot; Porter County, IN</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot__legal">
+      <span>&copy; 2026 Assisting Seniors, Inc. All rights reserved.</span>
+      <span>Non-medical home care &mdash; we do not provide skilled nursing, therapy, or medical treatment.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Persistent ways to reach Kelly -->
+<a class="rail" href="tel:+12192651581" aria-label="Call Kelly Staubus at (219) 265-1581">
+  <span>Call Kelly &middot; (219) 265-1581</span>
+</a>
+
+<nav class="callbar" aria-label="Contact">
+  <a href="tel:+12192651581">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+    Call Kelly
+  </a>
+  <a href="mailto:assistingseniorsnwi@gmail.com">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 7-10 6L2 7"/></svg>
+    Email
+  </a>
+</nav>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://quantumintelligenceworks.github.io/assistingseniorsnwi/#business",
+  "name": "Assisting Seniors, Inc.",
+  "alternateName": "Assisting Seniors",
+  "description": "Assisting Seniors, Inc. provides non-medical home care in Northwest Indiana - personal care, companionship, and household help that lets Seniors live safely and comfortably at home. Owned and operated by Kelly Staubus in Valparaiso, Indiana.",
+  "slogan": "Compassionate care. Peace of mind.",
+  "url": "https://quantumintelligenceworks.github.io/assistingseniorsnwi/",
+  "logo": "https://quantumintelligenceworks.github.io/assistingseniorsnwi/assets/asi-logo.png",
+  "image": "https://quantumintelligenceworks.github.io/assistingseniorsnwi/assets/asi-logo.png",
+  "telephone": "+1-219-265-1581",
+  "email": "assistingseniorsnwi@gmail.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Valparaiso",
+    "addressRegion": "IN",
+    "postalCode": "46383",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Valparaiso", "addressRegion": "IN" },
+    { "@type": "City", "name": "Portage", "addressRegion": "IN" },
+    { "@type": "City", "name": "Chesterton", "addressRegion": "IN" },
+    { "@type": "City", "name": "Crown Point", "addressRegion": "IN" },
+    { "@type": "City", "name": "Beverly Shores", "addressRegion": "IN" },
+    { "@type": "AdministrativeArea", "name": "Porter County, Indiana" }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Kelly Staubus",
+    "jobTitle": "President & Senior Care Consultant"
+  },
+  "knowsAbout": [
+    "Non-medical home care",
+    "Senior companionship",
+    "Respite care for family caregivers",
+    "Alzheimer's and dementia support",
+    "Personal care and hygiene assistance"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Home care services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Personal Care",
+          "description": "Bathing, dressing, grooming and hygiene, toileting and incontinence care, eating and hydration, safety supervision, transferring and positioning, and gentle exercise for strength, balance, and walking."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Companionship",
+          "description": "Daily routines and reminders, medication reminders, meal planning and preparation, appointments and transportation, outings and wellness activities, conversation, reading, games, and respite for family caregivers."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Household Help",
+          "description": "Dishes, dusting, vacuuming, and trash, laundry and linens, sorting mail and assisting with bills, grocery shopping and errands, prescription pickup, pet care, and houseplant care."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is non-medical home care?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Non-medical home care provides companionship, personal care assistance, meal preparation, light housekeeping, medication reminders, and transportation - support that helps Seniors live safely and comfortably at home without clinical or medical services." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from home health?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Home health involves skilled nursing, therapy, or medically supervised treatment prescribed by a physician. Assisting Seniors provides non-medical care only - we do not provide injections, wound care, skilled nursing, or medication administration. We do work alongside home-health teams and can help coordinate other resources when a need falls outside our scope." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide care in assisted living or nursing facilities?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. When a facility is short-staffed or a family wants dedicated one-to-one attention, we provide supplemental care alongside facility staff." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help with a hospital or rehab discharge?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work with discharge planners, social workers, and hospital case managers to coordinate home care support when a Senior is transitioning from a hospital or rehabilitation facility back home." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do we get started?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Call Kelly directly at (219) 265-1581 or email assistingseniorsnwi@gmail.com. The first conversation is a complimentary introductory call - no cost, no commitment." }
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
