@@ -352,6 +352,43 @@ section{ scroll-margin-top:9rem; }
 }
 .band--white .towns li{ background:var(--cream); }
 
+/* ---------- Community affiliations ---------- */
+.community{
+  margin-top:clamp(2.5rem, 5vw, 3.5rem);
+  padding-top:clamp(1.75rem, 3vw, 2.25rem);
+  border-top:1px solid var(--blush);
+}
+.community__title{
+  font-family:var(--body);
+  font-size:0.8rem; font-weight:500;
+  letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--plum);
+  margin:0 0 1.75rem;
+}
+.badges{ display:grid; gap:1.25rem; }
+@media (min-width:52rem){ .badges{ grid-template-columns:1fr 1fr; gap:1.75rem; } }
+
+.badge{
+  display:flex; align-items:flex-start; gap:1rem;
+  background:var(--white);
+  border:1px solid var(--blush);
+  border-radius:2px;
+  padding:1.25rem 1.35rem;
+}
+.band--white .badge{ background:var(--cream); }
+.badge__mark{
+  flex:0 0 auto; width:2.6rem; height:2.6rem;
+  color:var(--lavender);
+  margin-top:0.15rem;
+}
+.badge__name{
+  font-family:var(--display);
+  font-size:1.2rem; font-weight:600; line-height:1.25;
+  color:var(--plum-deep);
+  margin:0 0 0.3rem;
+}
+.badge__note{ font-size:0.96rem; line-height:1.6; margin:0; }
+
 /* ---------- About ---------- */
 .facts{
   list-style:none; margin:2rem 0 0; padding:0;
@@ -796,7 +833,8 @@ section{ scroll-margin-top:9rem; }
 
   <!-- ============================= AREAS ============================= -->
   <section id="areas" class="band">
-    <div class="wrap split">
+   <div class="wrap">
+    <div class="split">
       <div>
         <p class="sec-num"><b>05</b> Where we serve</p>
         <h2>Northwest Indiana,<br /><em class="soft">the 219.</em></h2>
@@ -814,6 +852,37 @@ section{ scroll-margin-top:9rem; }
         <p style="margin-top:1.5rem;font-size:1rem;">Nearby and not on the list? Call &mdash; we cover a wide radius around Valparaiso and will tell you honestly if we can help.</p>
       </div>
     </div>
+
+    <div class="community">
+          <h3 class="community__title">Rooted in this community</h3>
+
+          <div class="badges">
+            <article class="badge">
+              <svg class="badge__mark" viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.45"/>
+                <path d="M24 34c-7-5.2-12-9.4-12-15a6.6 6.6 0 0 1 12-3.8A6.6 6.6 0 0 1 36 19c0 5.6-5 9.8-12 15Z"
+                      fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+              </svg>
+              <div>
+                <p class="badge__name">Dunes Hospice</p>
+                <p class="badge__note">We work alongside the Dunes Hospice team, providing the non-medical companionship, personal care, and household help that sits beside hospice care when a family chooses to keep their loved one at home.</p>
+              </div>
+            </article>
+
+            <article class="badge">
+              <svg class="badge__mark" viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.45"/>
+                <path d="M13 33V22l11-7 11 7v11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+                <path d="M10 33h28M19 33v-7h10v7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div>
+                <p class="badge__name">Valparaiso Chamber of Commerce</p>
+                <p class="badge__note">A member business, and part of the network of local organizations Northwest Indiana families rely on.</p>
+              </div>
+            </article>
+          </div>
+    </div>
+   </div>
   </section>
 
   <!-- ============================= FAQ ============================= -->
@@ -855,6 +924,13 @@ section{ scroll-margin-top:9rem; }
           <summary>Do you provide care in assisted living or nursing facilities?</summary>
           <div class="answer">
             <p>Yes. When a facility is short-staffed or a family wants dedicated one-to-one attention, we provide supplemental care alongside facility staff.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can you help while a loved one is on hospice?</summary>
+          <div class="answer">
+            <p>Yes. Hospice covers the medical side of end-of-life care; we cover the hours in between &mdash; companionship, personal care, meals, and the household running &mdash; so a family can keep their loved one at home. We work alongside hospice teams, including Dunes Hospice, and coordinate rather than duplicate what they provide.</p>
           </div>
         </details>
 
@@ -1018,8 +1094,13 @@ section{ scroll-margin-top:9rem; }
     "name": "Kelly Staubus",
     "jobTitle": "President & Senior Care Consultant"
   },
+  "memberOf": {
+    "@type": "Organization",
+    "name": "Valparaiso Chamber of Commerce"
+  },
   "knowsAbout": [
     "Non-medical home care",
+    "Hospice support at home",
     "Senior companionship",
     "Respite care for family caregivers",
     "Alzheimer's and dementia support",
@@ -1072,6 +1153,11 @@ section{ scroll-margin-top:9rem; }
       "@type": "Question",
       "name": "How is this different from home health?",
       "acceptedAnswer": { "@type": "Answer", "text": "Home health involves skilled nursing, therapy, or medically supervised treatment prescribed by a physician. Assisting Seniors provides non-medical care only - we do not provide injections, wound care, skilled nursing, or medication administration. We do work alongside home-health teams and can help coordinate other resources when a need falls outside our scope." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help while a loved one is on hospice?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Hospice covers the medical side of end-of-life care; we cover the hours in between - companionship, personal care, meals, and the household running - so a family can keep their loved one at home. We work alongside hospice teams, including Dunes Hospice, and coordinate rather than duplicate what they provide." }
     },
     {
       "@type": "Question",
